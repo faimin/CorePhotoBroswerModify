@@ -20,10 +20,6 @@
 @implementation PBScrollView
 
 
-
-
-
-
 -(void)layoutSubviews{
     
     [super layoutSubviews];
@@ -32,7 +28,7 @@
 
     CGFloat w = frame.size.width ;
 
-    frame.size.width =w - PBMargin;
+    frame.size.width = w - PBMargin;
     
     [self.subviews enumerateObjectsUsingBlock:^(PhotoItemView *photoItemView, NSUInteger idx, BOOL *stop) {
         

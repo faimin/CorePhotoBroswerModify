@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "PhotoBroswerVC.h"
+#import "PhotoBroswer.h"
 #import "PhotoCotentView.h"
 
 
@@ -67,7 +67,7 @@
     
     __weak typeof(self) weakSelf=self;
     
-    [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
+    [PhotoBroswer show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
         
         NSArray *localImages = weakSelf.images;
         
@@ -100,7 +100,7 @@
     
     __weak typeof(self) weakSelf=self;
     
-    [PhotoBroswerVC show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
+    [PhotoBroswer show:self type:PhotoBroswerVCTypeZoom index:index photoModelBlock:^NSArray *{
         
         
         NSArray *networkImages=@[

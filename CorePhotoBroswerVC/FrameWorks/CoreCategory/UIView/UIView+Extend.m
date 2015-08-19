@@ -9,12 +9,7 @@
 #import "UIView+Extend.h"
 
 
-
-
-
 @implementation UIView (Extend)
-
-
 
 /**
  *  添加边框：注给scrollView添加会出错
@@ -244,7 +239,17 @@
 }
 
 
-
+/*
+ *  计算frame
+ */
++(CGRect)frameWithW:(CGFloat)w h:(CGFloat)h center:(CGPoint)center{
+    
+    CGFloat x = center.x - w *.5f;
+    CGFloat y = center.y - h * .5f;
+    CGRect frame = (CGRect){CGPointMake(x, y),CGSizeMake(w, h)};
+    
+    return frame;
+}
 
 
 

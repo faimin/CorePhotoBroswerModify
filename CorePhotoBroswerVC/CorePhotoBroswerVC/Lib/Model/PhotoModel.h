@@ -9,14 +9,27 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "PhotoBroswerType.h"
+typedef NS_ENUM(NSInteger, PhotoBroswerVCType) {
+    
+    //modal
+    PhotoBroswerVCTypePush = 0,
+    
+    //push
+    PhotoBroswerVCTypeModal,
+    
+    //transition
+    PhotoBroswerVCTypeTransition,
+    
+    //zoom
+    PhotoBroswerVCTypeZoom,
+    
+};
+
 
 @interface PhotoModel : NSObject
 
 /** mid，保存图片缓存唯一标识，必须传 */
 @property (nonatomic,assign) NSUInteger mid;
-
-
 
 
 /*
@@ -26,20 +39,10 @@
 /** 高清图地址 */
 @property (nonatomic,copy) NSString *image_HD_U;
 
-
-
 /*
  *  本地图片
  */
 @property (nonatomic,strong) UIImage *image;
-
-
-
-
-
-
-
-
 
 /** 标题 */
 @property (nonatomic,copy) NSString *title;
@@ -56,13 +59,10 @@
 /** 是否从源frame放大呈现 */
 @property (nonatomic,assign) BOOL isFromSourceFrame;
 
-
 /*
  *  检查数组合法性
  */
 +(NSString *)check:(NSArray *)photoModels type:(PhotoBroswerVCType)type;
-
-
 
 /**
  *  读取
@@ -71,15 +71,10 @@
  */
 -(BOOL)read;
 
-
-
 /*
  *  保存
  */
 -(void)save;
-
-
-
 
 
 @end

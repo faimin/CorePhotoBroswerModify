@@ -7,7 +7,7 @@
 //
 
 #import "PhotoImageView.h"
-#import "UIView+PBExtend.h"
+#import "UIView+Extend.h"
 #import "PBConst.h"
 #import "UIView+Extend.h"
 
@@ -23,8 +23,6 @@
 
 
 @implementation PhotoImageView
-
-
 
 
 -(void)setImage:(UIImage *)image{
@@ -112,14 +110,6 @@
     
     self.calF = frame;
 }
-
-
-
-
-
-
-
-
 
 
 -(CGRect)screenBounds{

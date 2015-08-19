@@ -84,4 +84,9 @@ typedef enum{
  */
 +(void)removeViews:(NSArray *)views;
 
+/*
+ *  计算frame
+ */
++(CGRect)frameWithW:(CGFloat)w h:(CGFloat)h center:(CGPoint)center;
+
 @end

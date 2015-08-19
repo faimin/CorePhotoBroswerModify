@@ -8,26 +8,17 @@
 
 #import "PBPGView.h"
 #import "LFRoundProgressView.h"
-#import "UIColor+Extend.h"
-
-
-
-
 
 @interface PBPGView ()
 
 /** 进度视图 */
 @property (nonatomic,strong) LFRoundProgressView *progressView;
 
-
 @end
 
 
 
-
-
 @implementation PBPGView
-
 
 -(instancetype)initWithFrame:(CGRect)frame{
     
@@ -63,7 +54,7 @@
  */
 -(void)viewPrepare{
     
-    self.backgroundColor = rgba(0, 0, 0, .5f);
+    self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     
     [self addSubview:self.progressView];
     

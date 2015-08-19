@@ -8,14 +8,11 @@
 
 #import "PhotoItemView.h"
 #import "UIView+Extend.h"
-#import "UIView+PBExtend.h"
 #import "PBPGView.h"
-#import "PBBlurImageView.h"
 #import "PBConst.h"
 #import "UIImage+Extend.h"
-#import "UIImageView+SD.h"
-
-
+#import "UIImage+ReMake.h"
+#import "UIImageView+WebCache.h"
 
 
 @interface PhotoItemView ()<UIScrollViewDelegate>{
@@ -38,8 +35,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 
-
-
 /** view的单击 */
 @property (nonatomic,strong) UITapGestureRecognizer *tap_single_viewGesture;
 
@@ -52,20 +47,11 @@
 /** 旋转手势 */
 @property (nonatomic,strong) UIRotationGestureRecognizer *rotaGesture;
 
-
-
-
-
-
-
-
-
-
 /** 双击放大 */
 @property (nonatomic,assign) BOOL isDoubleClickZoom;
 
-
 @end
+
 
 
 @implementation PhotoItemView
@@ -112,22 +98,18 @@
         
         if(image == nil) return;
         
-        [self.photoImageView imageWithUrlStr:_photoModel.image_HD_U phImage:image progressBlock:^(NSInteger receivedSize, NSInteger expectedSize) {
-            
+        [self.photoImageView sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:_photoModel.image_HD_U] andPlaceholderImage:image options:SDWebImageLowPriority | SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             _progressView.hidden = NO;
-            
             CGFloat progress = receivedSize /((CGFloat)expectedSize);
-            
             _progressView.progress = progress;
-            
-        } completedBlock:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             self.hasImage = image !=nil;
             
             if(image!=nil && _progressView.progress <1.0f) {
                 _progressView.progress = 1.0f;
             }
         }];
+        
     }else{
         
         self.photoImageView.image = _photoModel.image;
@@ -180,7 +162,7 @@
     if(_photoImageView == nil){
         
         _photoImageView = [[PhotoImageView alloc] init];
-        
+        //_photoImageView.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         _photoImageView.userInteractionEnabled = YES;
         
         [self.scrollView addSubview:_photoImageView];
@@ -188,12 +170,6 @@
     
     return _photoImageView;
 }
-
-
-
-
-
-
 
 
 /*
@@ -239,7 +215,8 @@
         CGRect rect = [UIView frameWithW:wh h:wh center:loc];
         
         [self.scrollView zoomToRect:rect animated:YES];
-    }else{
+    }
+     else{
         [self.scrollView setZoomScale:1.0f animated:YES];
     }
 }
