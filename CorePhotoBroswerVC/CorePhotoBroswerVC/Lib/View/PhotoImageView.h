@@ -11,9 +11,18 @@
 @interface PhotoImageView : UIImageView
 
 /** 设置图片后的回调 */
-@property (nonatomic,copy) void (^ImageSetBlock)(UIImage *image);
+@property (nonatomic, copy) void (^ImageSetBlock)(UIImage *image);
+
+@property (nonatomic, assign) CGRect calF;
+
+@end
 
 
-@property (nonatomic,assign) CGRect calF;
+@interface UIView (PBExtend)
+
+/*
+ *  计算frame
+ */
++ (CGRect)frameWithW:(CGFloat)w h:(CGFloat)h center:(CGPoint)center;
 
 @end

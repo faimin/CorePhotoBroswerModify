@@ -9,23 +9,18 @@
 #ifndef CorePhotoBroswerVC_PhotoBroswerType_h
 #define CorePhotoBroswerVC_PhotoBroswerType_h
 
+typedef NS_ENUM (NSUInteger, PhotoBroswerVCType) {
+	//modal
+	PhotoBroswerVCTypePush = 0,
 
-typedef enum {
-    
-    //modal
-    PhotoBroswerVCTypePush=0,
-    
-    //push
-    PhotoBroswerVCTypeModal,
-    
-    //transition
-    PhotoBroswerVCTypeTransition,
-    
-    //zoom
-    PhotoBroswerVCTypeZoom,
-    
-}PhotoBroswerVCType;
+	//push
+	PhotoBroswerVCTypeModal,
 
+	//transition
+	PhotoBroswerVCTypeTransition,
 
+	//zoom
+	PhotoBroswerVCTypeZoom,
+};
 
 #endif

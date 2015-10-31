@@ -22,12 +22,10 @@
 		892DD8AC1B0C1FD20038CC9A /* zoomMax.gif in Resources */ = {isa = PBXBuildFile; fileRef = 892DD8A61B0C1FD20038CC9A /* zoomMax.gif */; };
 		892DD8AD1B0C1FD20038CC9A /* modal.gif in Resources */ = {isa = PBXBuildFile; fileRef = 892DD8A71B0C1FD20038CC9A /* modal.gif */; };
 		892DD8AE1B0C1FD20038CC9A /* transition.gif in Resources */ = {isa = PBXBuildFile; fileRef = 892DD8A81B0C1FD20038CC9A /* transition.gif */; };
-		892DD8D21B0C1FFD0038CC9A /* UIView+PBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8B31B0C1FFD0038CC9A /* UIView+PBExtend.m */; };
 		892DD8D31B0C1FFD0038CC9A /* PBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8B61B0C1FFD0038CC9A /* PBConst.m */; };
 		892DD8D41B0C1FFD0038CC9A /* PhotoBroswerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8B91B0C1FFD0038CC9A /* PhotoBroswerLayout.m */; };
 		892DD8D51B0C1FFD0038CC9A /* PhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8BC1B0C1FFD0038CC9A /* PhotoModel.m */; };
 		892DD8D61B0C1FFD0038CC9A /* PB.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 892DD8BE1B0C1FFD0038CC9A /* PB.bundle */; };
-		892DD8D71B0C1FFD0038CC9A /* PBBlurImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8C31B0C1FFD0038CC9A /* PBBlurImageView.m */; };
 		892DD8D81B0C1FFD0038CC9A /* PBPGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8C51B0C1FFD0038CC9A /* PBPGView.m */; };
 		892DD8D91B0C1FFD0038CC9A /* PBSaveBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8C71B0C1FFD0038CC9A /* PBSaveBtn.m */; };
 		892DD8DA1B0C1FFD0038CC9A /* PBScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 892DD8C91B0C1FFD0038CC9A /* PBScrollView.m */; };
@@ -121,8 +119,6 @@
 		892DD8A61B0C1FD20038CC9A /* zoomMax.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = zoomMax.gif; sourceTree = "<group>"; };
 		892DD8A71B0C1FD20038CC9A /* modal.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = modal.gif; sourceTree = "<group>"; };
 		892DD8A81B0C1FD20038CC9A /* transition.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = transition.gif; sourceTree = "<group>"; };
-		892DD8B21B0C1FFD0038CC9A /* UIView+PBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PBExtend.h"; sourceTree = "<group>"; };
-		892DD8B31B0C1FFD0038CC9A /* UIView+PBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PBExtend.m"; sourceTree = "<group>"; };
 		892DD8B51B0C1FFD0038CC9A /* PBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBConst.h; sourceTree = "<group>"; };
 		892DD8B61B0C1FFD0038CC9A /* PBConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBConst.m; sourceTree = "<group>"; };
 		892DD8B81B0C1FFD0038CC9A /* PhotoBroswerLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerLayout.h; sourceTree = "<group>"; };
@@ -131,8 +127,6 @@
 		892DD8BC1B0C1FFD0038CC9A /* PhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoModel.m; sourceTree = "<group>"; };
 		892DD8BE1B0C1FFD0038CC9A /* PB.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PB.bundle; sourceTree = "<group>"; };
 		892DD8C01B0C1FFD0038CC9A /* PhotoBroswerType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoBroswerType.h; sourceTree = "<group>"; };
-		892DD8C21B0C1FFD0038CC9A /* PBBlurImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBBlurImageView.h; sourceTree = "<group>"; };
-		892DD8C31B0C1FFD0038CC9A /* PBBlurImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBBlurImageView.m; sourceTree = "<group>"; };
 		892DD8C41B0C1FFD0038CC9A /* PBPGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBPGView.h; sourceTree = "<group>"; };
 		892DD8C51B0C1FFD0038CC9A /* PBPGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBPGView.m; sourceTree = "<group>"; };
 		892DD8C61B0C1FFD0038CC9A /* PBSaveBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBSaveBtn.h; sourceTree = "<group>"; };
@@ -291,7 +285,6 @@
 		892DD8B01B0C1FFD0038CC9A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				892DD8B11B0C1FFD0038CC9A /* Category */,
 				892DD8B41B0C1FFD0038CC9A /* Const */,
 				892DD8B71B0C1FFD0038CC9A /* Layout */,
 				892DD8BA1B0C1FFD0038CC9A /* Model */,
@@ -300,15 +293,6 @@
 				892DD8C11B0C1FFD0038CC9A /* View */,
 			);
 			path = Lib;
-			sourceTree = "<group>";
-		};
-		892DD8B11B0C1FFD0038CC9A /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				892DD8B21B0C1FFD0038CC9A /* UIView+PBExtend.h */,
-				892DD8B31B0C1FFD0038CC9A /* UIView+PBExtend.m */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		892DD8B41B0C1FFD0038CC9A /* Const */ = {
@@ -357,8 +341,6 @@
 		892DD8C11B0C1FFD0038CC9A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				892DD8C21B0C1FFD0038CC9A /* PBBlurImageView.h */,
-				892DD8C31B0C1FFD0038CC9A /* PBBlurImageView.m */,
 				892DD8C41B0C1FFD0038CC9A /* PBPGView.h */,
 				892DD8C51B0C1FFD0038CC9A /* PBPGView.m */,
 				892DD8C61B0C1FFD0038CC9A /* PBSaveBtn.h */,
@@ -958,7 +940,6 @@
 				89F704161AFB395700B048E8 /* UITableViewCell+Extend.m in Sources */,
 				892DD8E81B0C20720038CC9A /* ViewController.m in Sources */,
 				89F704101AFB395700B048E8 /* UIFont+Extend.m in Sources */,
-				892DD8D71B0C1FFD0038CC9A /* PBBlurImageView.m in Sources */,
 				892DD8D51B0C1FFD0038CC9A /* PhotoModel.m in Sources */,
 				898355531AF88AF9008E0489 /* LFRoundProgressView.m in Sources */,
 				89F7040D1AFB395700B048E8 /* NSString+Password.m in Sources */,
@@ -976,7 +957,6 @@
 				89E38DEA1AFB4A51000B273A /* MKAnnotationView+WebCache.m in Sources */,
 				89E38DF01AFB4A51000B273A /* SDWebImageDownloaderOperation.m in Sources */,
 				89F703D21AFB37B500B048E8 /* CoreSVP.m in Sources */,
-				892DD8D21B0C1FFD0038CC9A /* UIView+PBExtend.m in Sources */,
 				89E38DE81AFB4A51000B273A /* UIImage+ReMake.m in Sources */,
 				89E38DF81AFB4A51000B273A /* UIImageView+WebCache.m in Sources */,
 				892DD8DB1B0C1FFD0038CC9A /* PhotoImageView.m in Sources */,

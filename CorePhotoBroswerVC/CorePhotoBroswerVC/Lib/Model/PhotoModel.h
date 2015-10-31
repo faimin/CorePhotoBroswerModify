@@ -14,72 +14,50 @@
 @interface PhotoModel : NSObject
 
 /** mid，保存图片缓存唯一标识，必须传 */
-@property (nonatomic,assign) NSUInteger mid;
-
-
-
+@property (nonatomic, assign) NSUInteger mid;
 
 /*
  *  网络图片
  */
 
 /** 高清图地址 */
-@property (nonatomic,copy) NSString *image_HD_U;
-
-
+@property (nonatomic, copy) NSString *image_HD_U;
 
 /*
  *  本地图片
  */
-@property (nonatomic,strong) UIImage *image;
-
-
-
-
-
-
-
-
+@property (nonatomic, strong) UIImage *image;
 
 /** 标题 */
-@property (nonatomic,copy) NSString *title;
+@property (nonatomic, copy) NSString *title;
 
 /** 描述 */
-@property (nonatomic,copy) NSString *desc;
+@property (nonatomic, copy) NSString *desc;
 
 /** 源frame */
-@property (nonatomic,assign,readonly) CGRect sourceFrame;
+@property (nonatomic, assign, readonly) CGRect sourceFrame;
 
 /** 源imageView */
-@property (nonatomic,weak) UIImageView *sourceImageView;
+@property (nonatomic, weak) UIImageView *sourceImageView;
 
 /** 是否从源frame放大呈现 */
-@property (nonatomic,assign) BOOL isFromSourceFrame;
-
+@property (nonatomic, assign) BOOL isFromSourceFrame;
 
 /*
  *  检查数组合法性
  */
-+(NSString *)check:(NSArray *)photoModels type:(PhotoBroswerVCType)type;
-
-
++ (NSString *)check:(NSArray *)photoModels type:(PhotoBroswerVCType)type;
 
 /**
  *  读取
  *
  *  @return 是否已经保存到本地
  */
--(BOOL)read;
-
-
+- (BOOL)read;
 
 /*
  *  保存
  */
--(void)save;
-
-
-
-
+- (void)save;
 
 @end

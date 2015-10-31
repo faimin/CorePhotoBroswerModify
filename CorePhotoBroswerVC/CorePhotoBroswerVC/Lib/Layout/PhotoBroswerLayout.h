@@ -10,10 +10,6 @@
 
 @interface PhotoBroswerLayout : UICollectionViewFlowLayout
 
-
-
-+(instancetype)layout:(CGSize)size;
-
-
++ (instancetype)layout:(CGSize)size;
 
 @end

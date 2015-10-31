@@ -10,12 +10,9 @@
 
 @interface PBScrollView : UIScrollView
 
-@property (nonatomic,assign) NSUInteger index;
-
+@property (nonatomic, assign) NSUInteger index;
 
 /** 照片数组 */
-@property (nonatomic,strong) NSArray *photoModels;
-
-
+@property (nonatomic, strong) NSArray *photoModels;
 
 @end

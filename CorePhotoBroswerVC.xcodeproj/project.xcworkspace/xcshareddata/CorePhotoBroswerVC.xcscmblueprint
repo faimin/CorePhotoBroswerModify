@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "38DC38F766121E3DCC60234022D9F6F199797905",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "38DC38F766121E3DCC60234022D9F6F199797905" : 0,
+    "E329E12008D67B0E310038A11A5272110E31A97F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "05CD173A-6C04-4DCC-938A-7CC12F524984",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "38DC38F766121E3DCC60234022D9F6F199797905" : "CorePhotoBroswerVC",
+    "E329E12008D67B0E310038A11A5272110E31A97F" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CorePhotoBroswerVC",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CorePhotoBroswerVC.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nsdictionary\/CorePhotoBroswerVC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "38DC38F766121E3DCC60234022D9F6F199797905"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/faimin\/LibClass.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E329E12008D67B0E310038A11A5272110E31A97F"
+    }
+  ]
+}
