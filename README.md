@@ -1,8 +1,12 @@
+
+## 从Code4App 过来的朋友，请查看并点击收藏[信息公告牌](https://github.com/CharlinFeng/Show)
+
+
 <br />
 
-####  特大更新
-#### swift完美版，大量听取OC版用户心声，呕心沥血打造更强大更好用更适合你的照片浏览器！！！
-地址：https://github.com/nsdictionary/PhotoBrowser/ 
+####  照片浏览器已经大更新（请关注[信息公告牌](https://github.com/CharlinFeng/Show)）
+#### 敬呈：Swift完美版，大量听取OC版用户心声，呕心沥血打造更强大更好用更适合你的照片浏览器！！！
+##### [https://github.com/nsdictionary/PhotoBrowser/](https://github.com/nsdictionary/PhotoBrowser/) 
 
 <br /><br /><br />
 
@@ -12,7 +16,7 @@
 
 <br />
 
-秒杀MJPhotobswer, CorePhotoBroswerVC 2.0版本
+CorePhotoBroswerVC 2.0版本
 ===============
 快速集成高性能照片浏览器，支持本地及网络相册！<br />
 
@@ -189,8 +193,8 @@ zoom方式下，有非常多的细节，这里截图说明一二<br />
 
 <br /><br />
 
-#### Charlin想说 SAY<br />
-此版本最开始是使用ColletionView来做的，后面在collectionView的cell里面增加scrollView会出现ios7下乱跳的bug，无法解决，后来只有换成scrollView。这个框架其他就是细节太多了，如果有兴趣可以看看源码，会发现里面有太多稀奇古怪的bug修复，因为里面太多控件太多手势杂糅在一起。可能还是有很多bug，可以加我群成都iOS开发群_Charlin：163865401讨论。<br /><br />
+#### 心声 SAY<br />
+此版本最开始是使用ColletionView来做的，后面在collectionView的cell里面增加scrollView会出现ios7下乱跳的bug，无法解决，后来只有换成scrollView。这个框架其他就是细节太多了，如果有兴趣可以看看源码，会发现里面有太多稀奇古怪的bug修复，因为里面太多控件太多手势杂糅在一起。<br /><br />
 
 <br />
 #### 框架依赖 APPEND（本框架默认集成以下框架，最新到我这里查看https://github.com/nsdictionary?tab=repositories）<br />
@@ -291,50 +295,3 @@ zoom方式下，有非常多的细节，这里截图说明一二<br />
 
 
 <br /><br />
-
-框架推荐：CoreModel系列 SERIES
-===============
-
-#### 重磅推出：Swift版的MJExtension，运行时、反射与一键字典模型互转
-文档：https://github.com/nsdictionary/CFRuntime
-
-第一季：CoreFMDB
-https://github.com/nsdictionary/CoreFMDB
-
-第二季：CoreArchive
-https://github.com/nsdictionary/CoreArchive
-
-第三季：CoreClass
-https://github.com/nsdictionary/CoreClass
-
-第四季：CoreModel模型动态缓存、列表模型动态缓存。<br />
-暂未开源！请加群归队，获取最新信息（群信息在下面）！！！请支持第三季！
-
-第五季：动态缓存list终结者。<br />
-暂未开源！请加群归队，获取最新信息（群信息在下面）！！！请支持第三季！
-
-<br /><br /><br />
-本框架是隶属于MJExtension续作，我给这系列框架取了一个整体上的名字叫做：CoreModel。
-CoreClass是系列第三季，共有5季，还有最后两季！连载中，请加群关注最新动态！<br />
-
-<br /><br />
-
-组织信息 Charlin Feng：
-===============
-<br />
-#### 特别群：请西部省市朋友实名加入组织。其他地区朋友请添加3-4群：谢谢。
-<br />
-【西部区域】西部大开发群号： 473185026  -追赶北上广！为振兴西部IT而努力！<br />
-热烈欢迎中国西部各省市的从事iOS开发朋友实名进群！本群为是聚集西部零散开发者，大家齐心协力共进退！ <br /><br />
-
-【全国可加】四群： 347446259<br />
-新开，可加！欢迎全国朋友加入组织 <br /><br />
-
-【全国可加】三群： 474377358<br />
-新开，可加！欢迎全国朋友加入组织 <br /><br />
-
-【全国可加】二群： 369870753<br />
-**WARNING: 已爆满，加不上了**<br /><br />
-
-【全国可加】一群：163865401<br />
-**WARNING: 已爆满，加不上了**<br /><br />
