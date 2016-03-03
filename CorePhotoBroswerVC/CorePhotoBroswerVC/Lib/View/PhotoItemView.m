@@ -11,10 +11,19 @@
 #import "PBPGView.h"
 #import "PBConst.h"
 #import "UIImage+Extend.h"
+<<<<<<< HEAD
 #import "UIImageView+SD.h"
 
 @interface PhotoItemView () <UIScrollViewDelegate>{
 	CGFloat _zoomScale;
+=======
+#import "UIImage+ReMake.h"
+#import "UIImageView+WebCache.h"
+
+
+@interface PhotoItemView ()<UIScrollViewDelegate>{
+    CGFloat _zoomScale;
+>>>>>>> origin/MyCorePhotoBroswer
 }
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -46,6 +55,7 @@
 @property (nonatomic, strong) UIRotationGestureRecognizer *rotaGesture;
 
 /** 双击放大 */
+<<<<<<< HEAD
 @property (nonatomic, assign) BOOL isDoubleClickZoom;
 
 @end
@@ -91,12 +101,22 @@
 	if (isNetWorkShow) { //网络请求
 		//创建imageView
 		UIImage *image = [UIImage phImageWithSize:[UIScreen mainScreen].bounds.size zoom:.3f];
+=======
+@property (nonatomic,assign) BOOL isDoubleClickZoom;
+
+@end
+>>>>>>> origin/MyCorePhotoBroswer
 
 		self.photoImageView.image = image;
 
+<<<<<<< HEAD
 		if (image == nil) {
 			return;
 		}
+=======
+
+@implementation PhotoItemView
+>>>>>>> origin/MyCorePhotoBroswer
 
 		[self.photoImageView imageWithUrlStr:_photoModel.image_HD_U phImage:image progressBlock:^(NSInteger receivedSize, NSInteger expectedSize) {
 			_progressView.hidden = NO;
@@ -107,6 +127,7 @@
 		} completedBlock:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 			self.hasImage = image != nil;
 
+<<<<<<< HEAD
 			if (image != nil && _progressView.progress < 1.0f) {
 				_progressView.progress = 1.0f;
 			}
@@ -114,6 +135,82 @@
 	}
 	else {
 		self.photoImageView.image = _photoModel.image;
+=======
+/*
+ *  数据准备
+ */
+-(void)dataPrepare{
+    
+    if(self.photoModel == nil) return;
+    
+    BOOL isNetWorkShow = _photoModel.image == nil;
+    
+    if(isNetWorkShow){//网络请求
+        
+        //创建imageView
+        UIImage *image = [UIImage phImageWithSize:[UIScreen mainScreen].bounds.size zoom:.3f];
+        
+        self.photoImageView.image = image;
+        
+        if(image == nil) return;
+        
+        [self.photoImageView sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:_photoModel.image_HD_U] andPlaceholderImage:image options:SDWebImageLowPriority | SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+            _progressView.hidden = NO;
+            CGFloat progress = receivedSize /((CGFloat)expectedSize);
+            _progressView.progress = progress;
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            self.hasImage = image !=nil;
+            
+            if(image!=nil && _progressView.progress <1.0f) {
+                _progressView.progress = 1.0f;
+            }
+        }];
+        
+    }else{
+        
+        self.photoImageView.image = _photoModel.image;
+        
+        //标记
+        self.hasImage = YES;
+    }
+
+    self.scrollView.contentSize = self.photoImageView.frame.size;
+
+    
+    self.photoImageView.frame = self.photoModel.sourceFrame;
+    
+    if(self.photoModel.isFromSourceFrame && self.type == PhotoBroswerVCTypeZoom){
+        
+        self.bgView.alpha = 0;
+        
+        CGFloat timeInterval = .52f;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [UIView animateWithDuration:timeInterval-.3f animations:^{
+                self.bgView.alpha = 1;
+                self.bgView.backgroundColor = [UIColor blackColor];
+            }];
+        });
+        
+        [UIView animateWithDuration:timeInterval delay:0 usingSpringWithDamping:.52f initialSpringVelocity:10 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            
+            self.photoImageView.frame = self.photoImageView.calF;
+            
+        } completion:nil];
+        
+        //删除标记
+        self.photoModel.isFromSourceFrame = NO;
+        
+    }else{
+       self.photoImageView.frame = self.photoImageView.calF; 
+    }
+
+
+    //标题
+    _titleLabel.text = _photoModel.title;
+    _descLabel.text = _photoModel.desc;
+}
+>>>>>>> origin/MyCorePhotoBroswer
 
 		//标记
 		self.hasImage = YES;
@@ -121,13 +218,30 @@
 
 	self.scrollView.contentSize = self.photoImageView.frame.size;
 
+<<<<<<< HEAD
 	self.photoImageView.frame = self.photoModel.sourceFrame;
 
 	if (self.photoModel.isFromSourceFrame && self.type == PhotoBroswerVCTypeZoom) {
 		self.bgView.alpha = 0;
+=======
+-(PhotoImageView *)photoImageView{
+    
+    if(_photoImageView == nil){
+        
+        _photoImageView = [[PhotoImageView alloc] init];
+        //_photoImageView.autoresizingMask =  UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        _photoImageView.userInteractionEnabled = YES;
+        
+        [self.scrollView addSubview:_photoImageView];
+    }
+    
+    return _photoImageView;
+}
+>>>>>>> origin/MyCorePhotoBroswer
 
 		CGFloat timeInterval = .52f;
 
+<<<<<<< HEAD
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[UIView animateWithDuration:timeInterval - .3f animations:^{
 				self.bgView.alpha = 1;
@@ -164,6 +278,8 @@
 	return _photoImageView;
 }
 
+=======
+>>>>>>> origin/MyCorePhotoBroswer
 /*
  *  事件处理
  */
@@ -194,11 +310,37 @@
 /*
  *  imageView双击
  */
+<<<<<<< HEAD
 - (void)tap_double_imageViewTap:(UITapGestureRecognizer *)tap
 {
 	if (!self.hasImage) {
 		return;
 	}
+=======
+-(void)tap_double_imageViewTap:(UITapGestureRecognizer *)tap{
+    
+    if(!self.hasImage) return;
+    
+    //标记
+    self.isDoubleClickZoom = YES;
+    
+    CGFloat zoomScale = self.scrollView.zoomScale;
+    
+    if(zoomScale<=1.0f){
+        
+        CGPoint loc = [tap locationInView:tap.view];
+        
+        CGFloat wh =1;
+        
+        CGRect rect = [UIView frameWithW:wh h:wh center:loc];
+        
+        [self.scrollView zoomToRect:rect animated:YES];
+    }
+     else{
+        [self.scrollView setZoomScale:1.0f animated:YES];
+    }
+}
+>>>>>>> origin/MyCorePhotoBroswer
 
 	//标记
 	self.isDoubleClickZoom = YES;

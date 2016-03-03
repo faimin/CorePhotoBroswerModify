@@ -23,6 +23,7 @@
 {
 	[super layoutSubviews];
 
+<<<<<<< HEAD
 	__block CGRect frame = self.bounds;
 
 	CGFloat w = frame.size.width;
@@ -33,6 +34,44 @@
 		CGFloat x = w * photoItemView.pageIndex;
 
 		frame.origin.x = x;
+=======
+-(void)layoutSubviews{
+    
+    [super layoutSubviews];
+    
+    __block CGRect frame = self.bounds;
+
+    CGFloat w = frame.size.width ;
+
+    frame.size.width = w - PBMargin;
+    
+    [self.subviews enumerateObjectsUsingBlock:^(PhotoItemView *photoItemView, NSUInteger idx, BOOL *stop) {
+        
+        CGFloat x = w * photoItemView.pageIndex;
+        
+        frame.origin.x = x;
+        
+        [UIView animateWithDuration:.01 animations:^{
+            photoItemView.frame = frame;
+            
+        }];
+        
+    }];
+    
+    
+    if(!_isScrollToIndex){
+        
+        //显示第index张图
+        CGFloat offsetX = w * _index;
+        
+        [self setContentOffset:CGPointMake(offsetX, 0) animated:NO];
+        
+        _isScrollToIndex = YES;
+    }
+    
+}
+
+>>>>>>> origin/MyCorePhotoBroswer
 
 		[UIView animateWithDuration:.01 animations:^{
 			photoItemView.frame = frame;

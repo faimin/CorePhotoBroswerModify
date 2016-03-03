@@ -8,11 +8,15 @@
 
 #import "PBPGView.h"
 #import "LFRoundProgressView.h"
+<<<<<<< HEAD
 #import "UIColor+Extend.h"
+=======
+>>>>>>> origin/MyCorePhotoBroswer
 
 @interface PBPGView ()
 
 /** 进度视图 */
+<<<<<<< HEAD
 @property (nonatomic, strong) LFRoundProgressView *progressView;
 
 @end
@@ -27,6 +31,29 @@
 		//视图准备
 		[self viewPrepare];
 	}
+=======
+@property (nonatomic,strong) LFRoundProgressView *progressView;
+
+@end
+
+
+
+@implementation PBPGView
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    self = [super initWithFrame:frame];
+    
+    if(self){
+        
+        //视图准备
+        [self viewPrepare];
+    }
+    
+    return self;
+}
+
+>>>>>>> origin/MyCorePhotoBroswer
 
 	return self;
 }
@@ -46,6 +73,7 @@
 /*
  *  视图准备
  */
+<<<<<<< HEAD
 - (void)viewPrepare
 {
 	self.backgroundColor = rgba(0, 0, 0, .5f);
@@ -53,6 +81,15 @@
 	[self addSubview:self.progressView];
 
 	self.clipsToBounds = YES;
+=======
+-(void)viewPrepare{
+    
+    self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    
+    [self addSubview:self.progressView];
+    
+    self.clipsToBounds = YES;
+>>>>>>> origin/MyCorePhotoBroswer
 }
 
 - (void)layoutSubviews

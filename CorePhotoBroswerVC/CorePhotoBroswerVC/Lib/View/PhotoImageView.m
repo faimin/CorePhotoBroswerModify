@@ -7,6 +7,10 @@
 //
 
 #import "PhotoImageView.h"
+<<<<<<< HEAD
+=======
+#import "UIView+Extend.h"
+>>>>>>> origin/MyCorePhotoBroswer
 #import "PBConst.h"
 #import "UIView+Extend.h"
 
@@ -28,12 +32,29 @@
 		return;
 	}
 
+<<<<<<< HEAD
 	[super setImage:image];
 
 	//确定frame
 	[self calFrame];
 
 	self.contentMode = UIViewContentModeScaleAspectFit;
+=======
+-(void)setImage:(UIImage *)image{
+    
+    if(image == nil) return;
+    
+    [super setImage:image];
+    
+    //确定frame
+    [self calFrame];
+    
+    self.contentMode = UIViewContentModeScaleAspectFit;
+    
+    if(_ImageSetBlock != nil) _ImageSetBlock(image);
+}
+
+>>>>>>> origin/MyCorePhotoBroswer
 
 	if (_ImageSetBlock != nil) {
 		_ImageSetBlock(image);
@@ -107,6 +128,7 @@
 		_screenBounds = [UIScreen mainScreen].bounds;
 	}
 
+<<<<<<< HEAD
 	return _screenBounds;
 }
 
@@ -136,6 +158,25 @@
 	CGRect frame = (CGRect) {CGPointMake(x, y), CGSizeMake(w, h)};
 
 	return frame;
+=======
+-(CGRect)screenBounds{
+    
+    if(CGRectEqualToRect(_screenBounds, CGRectZero)){
+        
+        _screenBounds = [UIScreen mainScreen].bounds;
+    }
+    
+    return _screenBounds;
+}
+
+-(CGPoint)screenCenter{
+    if(CGPointEqualToPoint(_screenCenter, CGPointZero)){
+        CGSize size = self.screenBounds.size;
+        _screenCenter = CGPointMake(size.width * .5f, size.height * .5f);
+    }
+
+    return _screenCenter;
+>>>>>>> origin/MyCorePhotoBroswer
 }
 
 @end

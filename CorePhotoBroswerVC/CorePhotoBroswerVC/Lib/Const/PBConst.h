@@ -14,26 +14,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
-
-
 /** 间距 */
 extern const CGFloat PBMargin;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #endif

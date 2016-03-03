@@ -6,8 +6,7 @@
 //  Copyright (c) 2015年 冯成林. All rights reserved.
 //
 
-#import "PhotoBroswerVC.h"
-#import "PhotoBroswerLayout.h"
+#import "PhotoBroswer.h"
 #import "PhotoItemView.h"
 #import "UIView+Extend.h"
 #import "UIImage+Extend.h"
@@ -17,7 +16,14 @@
 #import "PBScrollView.h"
 #import "CALayer+Transition.h"
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 @interface PhotoBroswerVC () <UIScrollViewDelegate>
+=======
+
+
+@interface PhotoBroswer ()<UIScrollViewDelegate>
+
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 
 /** 外部操作控制器 */
 @property (nonatomic, weak) UIViewController *handleVC;
@@ -38,6 +44,10 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scrollViewRightMarginC;
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
+=======
+
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 /** 相册数组 */
 @property (nonatomic, strong) NSArray *photoModels;
 
@@ -70,16 +80,54 @@
 
 @end
 
-@implementation PhotoBroswerVC
+@implementation PhotoBroswer
 
 + (void)show:(UIViewController *)handleVC type:(PhotoBroswerVCType)type index:(NSUInteger)index photoModelBlock:(NSArray *(^)())photoModelBlock
 {
 	//取出相册数组
 	NSArray *photoModels = photoModelBlock();
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 	if (photoModels == nil || photoModels.count == 0) {
 		return;
 	}
+=======
++(void)show:(UIViewController *)handleVC type:(PhotoBroswerVCType)type index:(NSUInteger)index photoModelBlock:(NSArray *(^)())photoModelBlock{
+    
+    //取出相册数组
+    NSArray *photoModels = photoModelBlock();
+    
+    if(photoModels == nil || photoModels.count == 0) return;
+    
+    NSString *result= [PhotoModel check:photoModels type:type];
+    
+    if(result !=nil){
+        NSLog(@"%@",result);
+        return;
+    }
+    
+    
+    PhotoBroswer *pbVC = [[self alloc] init];
+    
+    if(index >= photoModels.count){
+        NSLog(@"错误：index越界！");
+        return;
+    }
+    
+    //记录
+    pbVC.index = index;
+    
+    pbVC.photoModels = photoModels;
+    
+    //记录
+    pbVC.type =type;
+    
+    pbVC.handleVC = handleVC;
+    
+    //展示
+    [pbVC show];
+}
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 
 	NSString *result = [PhotoModel check:photoModels type:type];
 
@@ -162,25 +210,74 @@
 }
 
 /** zoom */
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 - (void)zoomPhotoVC
 {
 	//拿到window
 	UIWindow *window = _handleVC.view.window;
+=======
+-(void)zoomPhotoVC{
+    
+    //拿到window
+    UIWindow *window = _handleVC.view.window;
+    
+    if(window == nil){
+        
+        NSLog(@"错误：窗口为空！");
+        return;
+    }
+    
+    PhotoModel *photoModel = self.photoModels[self.index];
+    
+    photoModel.sourceImageView.hidden = YES;
+    
+    self.view.frame=[UIScreen mainScreen].bounds;
+    
+    //添加视图
+    [window addSubview:self.view];
+    
+    //添加子控制器
+    [_handleVC addChildViewController:self];
+    
+    self.topBarView.alpha=0;
+    
+    [UIView animateWithDuration:.25f animations:^{
+        self.topBarView.alpha=1;
+    } completion:^(BOOL finished) {
+        photoModel.sourceImageView.hidden = NO;
+    }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.6f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.view.backgroundColor = [UIColor blackColor];
+    });
+}
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 
 	if (window == nil) {
 		NSLog(@"错误：窗口为空！");
 		return;
 	}
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 	PhotoModel *photoModel = self.photoModels[self.index];
 
 	photoModel.sourceImageView.hidden = YES;
 
 	self.view.frame = [UIScreen mainScreen].bounds;
+=======
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    //控制器准备
+    [self vcPrepare];
+}
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 
 	//添加视图
 	[window addSubview:self.view];
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 	//添加子控制器
 	[_handleVC addChildViewController:self];
 
@@ -195,6 +292,13 @@
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.6f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		self.view.backgroundColor = [UIColor blackColor];
 	});
+=======
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 }
 
 - (void)viewDidLoad
@@ -205,11 +309,19 @@
 	[self vcPrepare];
 }
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
 
 	[self.navigationController setNavigationBarHidden:NO animated:YES];
+=======
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -330,9 +442,42 @@
 /*
  *  scrollView代理方法区
  */
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
 	NSUInteger page = [self pageCalWithScrollView:scrollView];
+=======
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    NSUInteger page = [self pageCalWithScrollView:scrollView];
+    
+    //记录dragPage
+    if(self.dragPage == 0)
+    {
+        self.dragPage = page;
+    }
+    
+    self.page = page;
+    
+    CGFloat offsetX = scrollView.contentOffset.x;
+    
+    CGFloat pageOffsetX = self.dragPage * scrollView.bounds.size.width;
+    
+    
+    if(offsetX > pageOffsetX){//正在向左滑动，展示右边的页面
+        
+        if(page >= self.pageCount - 1) return;
+        
+        self.nextPage = page + 1;
+        
+    }else if(offsetX < pageOffsetX){//正在向右滑动，展示左边的页面
+        
+        if(page == 0) return;
+        
+        self.nextPage = page - 1;
+    }
+}
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 
 	//记录dragPage
 	if (self.dragPage == 0) {
@@ -397,6 +542,7 @@
 	return page;
 }
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 - (void)setPhotoModels:(NSArray *)photoModels
 {
 	_photoModels = photoModels;
@@ -411,6 +557,22 @@
 		//初始化页码信息
 		self.page = _index;
 	});
+=======
+-(void)setPhotoModels:(NSArray *)photoModels{
+    
+    _photoModels = photoModels;
+    
+    self.pageCount = photoModels.count;
+    
+    //设置源frame标记，以获得动画效果
+    PhotoModel *sourcePhotoModel= photoModels[_index];
+    sourcePhotoModel.isFromSourceFrame = YES;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.3f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //初始化页码信息
+        self.page = _index;
+    });
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 }
 
 - (void)setPage:(NSUInteger)page
@@ -426,6 +588,7 @@
 	//设置标题
 	NSString *text = [NSString stringWithFormat:@"%@ / %@", @(page + 1), @(self.pageCount)];
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 	dispatch_async(dispatch_get_main_queue(), ^{
 		self.topBarLabel.text = text;
 		[self.topBarLabel setNeedsLayout];
@@ -444,6 +607,11 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
 	return UIStatusBarStyleLightContent;
+=======
+-(UIStatusBarStyle)preferredStatusBarStyle{
+ 
+    return UIStatusBarStyleLightContent;
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 }
 
 - (IBAction)leftBtnClick:(id)sender
@@ -623,10 +791,19 @@
 	//移除视图
 	[self.view removeFromSuperview];
 
+<<<<<<< HEAD:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswerVC.m
 	self.view = nil;
 
 	//移除
 	[self removeFromParentViewController];
 }
+=======
+#pragma mark - 旋转屏
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+//{
+//    //每页准备
+//    [self pagesPrepare];
+//}
+>>>>>>> origin/MyCorePhotoBroswer:CorePhotoBroswerVC/CorePhotoBroswerVC/PhotoBroswer.m
 
 @end

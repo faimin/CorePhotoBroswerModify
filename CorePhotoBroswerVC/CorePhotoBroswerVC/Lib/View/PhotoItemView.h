@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PhotoModel.h"
 #import "PhotoImageView.h"
-#import "PhotoBroswerVC.h"
+#import "PhotoBroswer.h"
 
 @interface PhotoItemView : UIView
 
